@@ -4,7 +4,7 @@ window.addEventListener('load', () =>{
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
-   let temperatureSection = document.querySelector('.temperature-section');
+   let temperatureSection = document.querySelector('.temperature');
    let temperatureSpan = document.querySelector('.temperature span');
 
 
@@ -43,8 +43,10 @@ let celsius = ( temperature - 32) * (5 / 9);
 temperatureSection.addEventListener('click', () => {
     if(temperatureSpan.textContent === 'F') {
         temperatureSpan.textContent = 'C';
+        temperatureDegree.textContent = Math.floor(celsius);
     }else{
         temperatureSpan.textContent = 'F';
+        temperatureDegree.textContent = temperature;
     }
         })
      });
